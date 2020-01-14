@@ -26,6 +26,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     myudp.h \
-    token.h
+    token.h \
+    token_str.h
 
 QT += network

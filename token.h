@@ -2,19 +2,28 @@
 #define TOKEN_H
 
 #include <QObject>
+#include <QString>
 
-class Token : public QObject
+/*class Token : public QObject
 {
     Q_OBJECT
-public:
-    explicit Token(QObject *parent = nullptr);
 
 
 private:
 
 
+
+
+public:
+    explicit Token(QObject *parent = nullptr);
+    QString str = QString("danasdas");
+
+
+
 signals:
 
-};
+};*/
+
+
 
 #endif // TOKEN_H
