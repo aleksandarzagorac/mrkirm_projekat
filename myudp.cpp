@@ -14,19 +14,18 @@ void MyUDP::SayHello()
 {
     QByteArray Data;
 
-
+    qDebug("Slanje iz klijenta!");
     struct Token tok;
-    Data.append(qUtf8Printable(tok.str));
+    Data.append(qUtf8Printable(tok.poruka));
 
     socket->writeDatagram(Data, QHostAddress::LocalHost, 1232);
     //socket->writeDatagram(t.str, QHostAddress::LocalHost, 1232);
 }
 
 
-
  void MyUDP::readyRead()
- {
-
+{
+/*
     QByteArray Buffer;
     Buffer.resize(socket->pendingDatagramSize());
 
@@ -36,6 +35,6 @@ void MyUDP::SayHello()
 
     qDebug()<<"Message from: "<< sender.toString();
     qDebug()<<"Message port: "<< senderPort;
-    qDebug()<<"Message: "<< Buffer;
+    qDebug()<<"Message: "<< Buffer;*/
 
  }

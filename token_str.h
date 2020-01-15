@@ -4,8 +4,9 @@
 
 struct Token
 {
-    QString str = "dobro vece";
-
+    QString poruka = "dobro jutro";
+    QString dest_addr;
+    QString source_addr;
 };
 
 #endif // TOKEN_STR_H
