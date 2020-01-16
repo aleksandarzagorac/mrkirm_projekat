@@ -4,7 +4,8 @@
 
 struct Token
 {
-    QString poruka = "dobro jutro";
+    QString inicijalna_poruka = "inicijalna";
+    QString poruka;
     QString dest_addr;
     QString source_addr;
 };

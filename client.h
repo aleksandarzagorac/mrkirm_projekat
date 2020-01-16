@@ -11,6 +11,7 @@ public:
     explicit Client(QObject *parent = 0);
 
 signals:
+    void send_initial();
     void send();
     void cekanje();
     void primanje();
@@ -18,6 +19,7 @@ signals:
 
 public slots:
     void send_token();
+    void send_token_initial();
 
 private:
     QUdpSocket *socket;

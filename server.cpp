@@ -11,14 +11,12 @@ Server::Server(QObject *parent) : QObject(parent)
         qDebug("Server bind done.");
     }
     socket->open(QAbstractSocket::ReadWrite);
+    qDebug("Dosli smo do waitForReadyRead()");
+
     connect(socket, SIGNAL(readyRead()), this, SLOT(prihvatanje_poruke()));
-    //connect(this ,SIGNAL(sPrihvatanje_poruke()), this , SLOT(prihvatanje_poruke()));
-    //emit sPrihvatanje_poruke();
+    this->uspostava_veze_clienti();
 
 }
-
-
-
 
 void Server::readyRead()
 {
@@ -40,4 +38,42 @@ void Server::prihvatanje_poruke()
     qDebug()<<"Message port: "<< senderPort;
     qDebug()<<"Message: "<< Buffer;
 
+    if(Buffer == "inicijalna"){
+        qDebug("\nporuka JESTE inicijalna\n");
+    }
+
 }
+void Server::uspostava_veze_clienti()
+{
+    int n;
+    //do{
+        qDebug("Unesite koliko zelite klijenata\n"
+               "Radi jednostavnosti 3-6");
+        QTextStream qtin(stdin);
+        QString line = qtin.readLine();
+        n = line.toInt();
+   // }while (!(n >= 3 && n <= 7));
+
+    client_br = n;
+
+    for(int i = 0; i < n ; i++)
+    {
+        socket->waitForReadyRead();
+        qDebug("Prosli smo waitForReadyRead()");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

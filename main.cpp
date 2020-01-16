@@ -9,21 +9,25 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    Server server;
-    Client client;
 
+    qDebug("Ovaj terminal je za: \n 1. server \n 2. client \n unesi broj ");
 
     QTextStream qtin(stdin);
     QString line = qtin.readLine();
-    qDebug("%s",qUtf8Printable(line));
 
 
+    if(line == '1')
+    {
+         Server server;
+    }else
+    {
+         Client client;
+    }
 
 
-    //client.send_token();
-   // server.client_recv_token();
-
-
+   // QTextStream qtin(stdin);
+   // QString line = qtin.readLine();
+   // qDebug("%s",qUtf8Printable(line));
 
     return a.exec();
 }
