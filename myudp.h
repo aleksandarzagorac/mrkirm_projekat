@@ -13,7 +13,8 @@ public:
     void SayHello();
 
 signals:
-
+    void Cekanje();
+    void Slanje();
 
 public slots:
     void readyRead();

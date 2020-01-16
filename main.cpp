@@ -4,22 +4,24 @@
 #include "client.h"
 #include <iostream>
 using namespace std;
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-   // qDebug("%s", qUtf8Printable(t.str));*/
-
-    Server s;
+    Server server;
     Client client;
+
 
     QTextStream qtin(stdin);
     QString line = qtin.readLine();
     qDebug("%s",qUtf8Printable(line));
 
 
-    client.send_token();
-    s.client_recv_token();
+
+
+    //client.send_token();
+   // server.client_recv_token();
 
 
 
